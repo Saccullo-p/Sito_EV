@@ -9,7 +9,7 @@ import { Station } from './station.model';
   providedIn: 'root'
 })
 export class MarkerService {
-  baseUrl : string = "https://5000-saccullop-sitoev-p575htyk8xf.ws-eu46.gitpod.io/markers"
+  baseUrl : string = "https://5000-saccullop-sitoev-r8nlcw10p1i.ws-eu46.gitpod.io/markers"
   constructor(private http: HttpClient) { 
     
   }

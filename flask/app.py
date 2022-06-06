@@ -25,13 +25,11 @@ def get():
 def onedata(string):
     # Il metodo 'GET' richiede dei dati specifici
     if request.method == 'GET':
-        data = mongo.db.Stazioni.find({'$or': [{"Station_Name": string}, {"City": string}]})
-        # data = mongo.db.Stazioni.find({'$and': [{'$or': [{"Station_Name": string}, {"City": string}]}, {'$or': [{"State": string}, {"EV_Network": string}]}]})
+        data = mongo.db.Stazioni.find({'$or': [{"Station_Name": string.title()}, {"City": string.title()}]})
         resp = json_util.dumps(data)
         return Response(resp, mimetype = 'application/json')
 
 
-#---- MAP <GEOPANDAS>
 @app.route('/markers', methods=['GET'])
 def markersGet():
         points = []
@@ -43,23 +41,6 @@ def markersGet():
                     "Latitude": i["Latitude"],
                     "Station_Name": i["Station_Name"],
                     "City": i["City"]
-                }
-            })
-        return jsonify(points)
-
-#MAP <GEOPANDAS> COL IL NIL
-@app.route('/markers/station/<string>', methods=['GET'])
-def markersGetT(string):
-        points = []
-        result = mongo.db.Stazioni.find({'Station_Name': string})
-        for i in result:
-            points.append({
-                "Coordinates": {
-                    "Longitude": i["Longitude"],
-                    "Latitude": i["Latitude"],
-                    "Station_Name": i["Station_Name"],
-                    "City": i["City"]
-
                 }
             })
         return jsonify(points)
