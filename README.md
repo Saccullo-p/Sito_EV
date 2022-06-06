@@ -2,7 +2,7 @@
 1. Inserire "gitpod.io#" all'interno dell'URL del repository per avviare Gitpod (https://gitpod.io#github.com/...);
 2. Attendere l'installazione delle librerie;
 3. Al termine, nella parte sinistra dello schermo cliccare "Remote Explorer". Saranno visibili due porte, la porta 4200 apre il sito (front-end), cliccare quindi
-sull'icona "Open Browser", un nuova scheda si aprira nel browser.
+sull'icona "Open Browser", un nuova scheda si aprirà nel browser.
 4. Tornare nella finestra di Gitpod e aprire la seconda porta (5000), cliccare sull'icona "Open Browser", si aprirà una scheda con tutti i dati presenti nella
 collection del database dedicato al progetto.
 5. Copiare l'URL della scheda aperta nel punto 4, con la porta 5000 (l'URL inizia con "https://5000-...") e tornare nella scheda di Gitpod, nella parte sinistra dello
